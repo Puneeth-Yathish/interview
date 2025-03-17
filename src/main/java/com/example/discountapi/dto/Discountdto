@@ -1,0 +1,11 @@
+package com.example.discountapi.model;
+
+
+@Getter @Setter @NoArgsConstructor @AllArgsConstructor
+public class 	DiscountDto {
+    
+    private String productId, 
+    private double quantity, 
+    private String promoCode;
+    private String userType;
+}
