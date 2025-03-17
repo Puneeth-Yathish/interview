@@ -6,8 +6,9 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class DiscountService {
-    private final ProductRepository productRepository;
-    private final PromoCodeRepository promoCodeRepository;
+	@Autowired 
+    ProductRepository productRepository;
+    @Autowired  PromoCodeRepository promoCodeRepository;
 
     public DiscountService(ProductRepository productRepository, PromoCodeRepository promoCodeRepository) {
         this.productRepository = productRepository;
@@ -29,7 +30,7 @@ public class DiscountService {
         }
 
         if (userType == UserType.PREMIUM) {
-            discount += basePrice * 0.10; // 10% off for premium users
+            discount += basePrice * 0.10; 
         }
 
         return basePrice - discount;
