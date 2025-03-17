@@ -22,12 +22,7 @@ public class DiscountService {
         double basePrice = product.getPrice() * quantity;
         double discount = 0.0;
 
-        if (promoCode != null) {
-            PromoCode code = promoCodeRepository.findByCode(promoCode);
-            if (code != null) {
-                discount += basePrice * (code.getDiscountPercentage() / 100);
-            }
-        }
+        
 
         if (userType == UserType.PREMIUM) {
             discount += basePrice * 0.10; 
